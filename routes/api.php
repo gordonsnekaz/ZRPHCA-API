@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ChatbotController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\HospitalController;
 use App\Http\Controllers\NewsController;
@@ -25,4 +27,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('hospitals', HospitalController::class);
     Route::apiResource('news', NewsController::class);
     Route::apiResource('reports', ReportController::class);
+    Route::apiResource('appointment', AppointmentController::class);
+    Route::post('chatbot', [ChatbotController::class, 'chat']);
 });
